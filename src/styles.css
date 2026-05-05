@@ -1,0 +1,117 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Lesotho-inspired palette: deep mountain green, warm clay, golden honey, cream */
+  --background: oklch(0.985 0.012 85);
+  --foreground: oklch(0.22 0.04 145);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 145);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 145);
+
+  --primary: oklch(0.38 0.09 155);          /* mountain green */
+  --primary-foreground: oklch(0.985 0.012 85);
+  --primary-glow: oklch(0.52 0.13 150);
+
+  --secondary: oklch(0.94 0.03 85);          /* warm cream */
+  --secondary-foreground: oklch(0.28 0.06 145);
+
+  --muted: oklch(0.95 0.018 85);
+  --muted-foreground: oklch(0.48 0.03 100);
+
+  --accent: oklch(0.74 0.16 70);             /* honey gold */
+  --accent-foreground: oklch(0.22 0.06 60);
+
+  --clay: oklch(0.58 0.14 40);               /* terracotta clay */
+  --clay-foreground: oklch(0.985 0.012 85);
+
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.985 0.012 85);
+
+  --border: oklch(0.88 0.02 85);
+  --input: oklch(0.9 0.02 85);
+  --ring: oklch(0.52 0.13 150);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.38 0.09 155) 0%, oklch(0.52 0.13 150) 60%, oklch(0.74 0.16 70) 100%);
+  --gradient-banner: linear-gradient(100deg, oklch(0.74 0.16 70) 0%, oklch(0.58 0.14 40) 100%);
+  --gradient-card: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.97 0.018 85) 100%);
+
+  --shadow-soft: 0 4px 20px -8px oklch(0.38 0.09 155 / 0.18);
+  --shadow-elegant: 0 16px 40px -12px oklch(0.38 0.09 155 / 0.28);
+  --shadow-glow: 0 0 60px oklch(0.74 0.16 70 / 0.35);
+
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 145);
+  --foreground: oklch(0.96 0.012 85);
+  --card: oklch(0.22 0.03 145);
+  --card-foreground: oklch(0.96 0.012 85);
+  --popover: oklch(0.22 0.03 145);
+  --popover-foreground: oklch(0.96 0.012 85);
+  --primary: oklch(0.74 0.16 70);
+  --primary-foreground: oklch(0.18 0.02 145);
+  --secondary: oklch(0.28 0.03 145);
+  --secondary-foreground: oklch(0.96 0.012 85);
+  --muted: oklch(0.26 0.02 145);
+  --muted-foreground: oklch(0.7 0.02 100);
+  --accent: oklch(0.74 0.16 70);
+  --accent-foreground: oklch(0.18 0.02 145);
+  --border: oklch(0.3 0.02 145);
+  --input: oklch(0.3 0.02 145);
+  --ring: oklch(0.74 0.16 70);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.015em; }
+}
+
+@theme inline {
+  --color-clay: var(--clay);
+  --color-clay-foreground: var(--clay-foreground);
+  --color-primary-glow: var(--primary-glow);
+}
